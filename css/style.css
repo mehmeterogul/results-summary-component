@@ -190,7 +190,6 @@ body {
   border-radius: 2.5rem;
   font-size: var(--fs-body-m);
   letter-spacing: 0.1px;
-  transition: var(--transition);
 }
 
 .summary__button:hover {

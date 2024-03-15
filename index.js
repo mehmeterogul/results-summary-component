@@ -1,6 +1,4 @@
-const categories = document.querySelectorAll("summary__category");
-const scores = document.querySelectorAll(".summary__score");
-const icons = document.querySelectorAll(".summary__icon");
+let scoreText = document.querySelector(".result__score");
 
 fetch("./data.json")
   .then((response) => {
@@ -17,6 +15,9 @@ function handleData(data) {
   const summaryParent = document.querySelector(".summary");
 
   let output = "";
+  let overallScore = 0.0;
+  let scores = 0;
+
   output += `<h3 class="summary__heading">Summary</h3>`;
 
   data.forEach((i) => {
@@ -34,9 +35,14 @@ function handleData(data) {
     </p>
   </div>
   `;
+
+    overallScore += i.score;
+    scores++;
   });
 
   output += `<button class="summary__button">Continue</button>`;
+  overallScore = Math.floor(overallScore / scores);
 
   summaryParent.innerHTML = output;
+  scoreText.innerHTML = overallScore;
 }

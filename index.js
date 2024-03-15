@@ -1,7 +1,3 @@
-const categories = document.querySelectorAll("summary__category");
-const scores = document.querySelectorAll(".summary__score");
-const icons = document.querySelectorAll(".summary__icon");
-
 fetch("./data.json")
   .then((response) => {
     if (!response.ok) {

@@ -22,7 +22,6 @@ function handleData(data) {
 
   data.forEach((i) => {
     output += `
-    
     <div class="summary__box ${i.color}">
     <img
       class="summary__icon"
